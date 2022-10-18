@@ -5,9 +5,9 @@ HTML_AND_CSS_TEMPLATE_THREE
 The Status Is Gonna be like this: "Next Up" Or "In Progress" Or "Completed";
 |**Section** | **Status** |
 | -- | --|
-|Header|Next Up| 
-|Landing|Next Up| 
-|Articles|Next Up| 
+|Header|**Completed**| 
+|Landing|**Completed**| 
+|Articles|**Completed**| 
 |Gallery|Next Up| 
 |Features|Next Up| 
 |Testimonials|Next Up| 
