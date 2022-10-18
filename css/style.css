@@ -8,6 +8,8 @@
   --clr-trans: 60%;
   --link-clr: #f6f6f6;
   --p-clr: #777;
+  --rating-clr: #ffc107;
+  --main-shadow: 1px 3px 5px 3px rgb(0 0 0 / 0.1);
 }
 html {
   scroll-behavior: smooth;
@@ -36,9 +38,13 @@ img {
   max-width: 100%;
   display: block;
 }
+picture {
+  display: block;
+}
 
 .main-title {
   position: relative;
+  z-index: 1;
   text-transform: uppercase;
   font-size: 1.75rem;
   font-weight: 700;
@@ -305,9 +311,9 @@ header .megamenu ul li a:hover {
   }
 }
 @media (min-width: 2560px) {
-    #landing .container {
-        justify-content: space-around;
-      } 
+  #landing .container {
+    justify-content: space-around;
+  }
 }
 
 /* Article Section */
@@ -324,7 +330,7 @@ header .megamenu ul li a:hover {
 #article .cards > div {
   overflow: hidden;
   border-radius: 6px;
-  box-shadow: 1px 3px 6px 1px rgb(0 0 0 / 0.1);
+  box-shadow: var(--main-shadow);
 }
 #article .cards > div .text,
 #article .cards > div footer {
@@ -361,15 +367,308 @@ header .megamenu ul li a:hover {
 }
 
 @media (min-width: 2560px) {
-    #article .container {
-        display: grid;
-        place-items: center;
-    }
-    #article .cards {
-        grid-template-columns: repeat(4, 300px);
-        grid-template-rows: repeat(2, 1fr);
-    }
+  #article .container {
+    display: grid;
+    place-items: center;
+  }
+  #article .cards {
+    grid-template-columns: repeat(4, 300px);
+    grid-template-rows: repeat(2, 1fr);
+  }
 }
+
+/* Gallery Section */
+#gallery {
+  background-color: #eee;
+}
+.spikes {
+  position: relative;
+}
+.spikes::before {
+  content: "";
+  position: absolute;
+  height: 30px;
+  width: 100%;
+  z-index: 1;
+  background-image: linear-gradient(135deg, white 25%, transparent 25%),
+    linear-gradient(225deg, white 25%, transparent 25%);
+  background-size: 30px 30px;
+}
+
+#gallery .container {
+  padding-block: var(--section-pd);
+}
+
+#gallery .cards {
+  padding-block: var(--section-pd);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+#gallery .cards picture {
+  border: 15px solid #fff;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--main-shadow);
+}
+#gallery .cards picture::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(183, 255, 251, 0.192);
+  transform: scale(0);
+  transform-origin: center center;
+  z-index: 1;
+}
+#gallery .cards picture:hover::before {
+  animation: gallery 0.4s linear;
+}
+#gallery .cards picture img {
+  transition: transform 0.3s;
+}
+#gallery .cards picture:hover img {
+  transform: scale(1.2) rotate(8deg);
+}
+
+/* Features */
+#features .container {
+  padding-block: var(--section-pd);
+}
+#features .cards {
+  padding-block: var(--section-pd);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+#features .cards > div {
+  min-height: 650px;
+  border: 1px solid #ccc;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+#features .cards > div picture {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+#features .cards > div picture::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+#features .cards > div picture::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 0 0 300px 800px;
+  border-color: transparent;
+  border-bottom-color: #fff;
+  bottom: 0;
+  right: 0;
+  transition: .4s border;
+}
+#features .cards > div:hover picture::after {
+  border-width: 0 800px 180px 0;
+}
+@media (min-width: 680px) {
+  #features .cards > div picture::after {
+    border-width: 0 0 190px 600px;
+  }
+  #features .cards > div:hover picture::after {
+    border-width: 0 600px 190px 0;
+  }
+}
+#features .cards > div:first-of-type picture::before {
+  background-color: var(--clr-1);
+  opacity: var(--clr-trans);
+}
+#features .cards > div:nth-of-type(2) picture::before {
+  background-color: var(--clr-2);
+  opacity: var(--clr-trans);
+}
+#features .cards > div:last-of-type picture::before {
+  background-color: var(--clr-3);
+  opacity: var(--clr-trans);
+}
+#features .cards > div hgroup {
+  padding-inline: 1.2rem;
+  line-height: 1.7;
+}
+#features .cards > div hgroup h4 {
+  text-transform: capitalize;
+  font-size: 2.25rem;
+  padding-block-start: 1.5rem;
+}
+#features .cards > div hgroup .horz-line {
+  width: 60px;
+  height: 5px;
+  border: 0;
+}
+#features .cards > div:first-of-type hgroup .horz-line {
+  width: 90px;
+  background-color: var(--clr-1);
+}
+#features .cards > div:nth-of-type(2) hgroup .horz-line {
+  width: 60px;
+  background-color: var(--clr-2);
+}
+#features .cards > div:last-of-type hgroup .horz-line {
+  width: 100px;
+  background-color: var(--clr-3);
+}
+#features .cards > div hgroup p {
+  color: #777;
+  font-size: 1.15rem;
+  margin-block: 1rem;
+}
+#features .cards > div .btn {
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border: 3px solid black;
+  padding: .4rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  width: max-content;
+  margin: auto auto 30px;
+  position: relative;
+  z-index: 1;
+}
+#features .cards > div:hover .btn {
+  color: #fff !important;
+}
+#features .cards > div .btn::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform-origin: left center;
+  transform: rotateY(90deg);
+  transition: .3s transform ease-out;
+}
+#features .cards > div:hover .btn::before {
+  transform: rotateY(0);
+}
+#features .cards > div:first-of-type .btn {
+  border-color: var(--clr-1);
+  color: var(--clr-1);
+}
+#features .cards > div:first-of-type .btn::before {
+  background-color: var(--clr-1);
+}
+#features .cards > div:nth-of-type(2) .btn {
+  border-color: var(--clr-2);
+  color: var(--clr-2);
+}
+#features .cards > div:nth-of-type(2) .btn::before {
+  background-color: var(--clr-2);
+}
+#features .cards > div:last-of-type .btn {
+  border-color: var(--clr-3);
+  color: var(--clr-3);
+}
+#features .cards > div:last-of-type .btn::before {
+  background-color: var(--clr-3);
+}
+
+/* Testimonials Section */
+#testimonials {
+  background-color: #eee;
+}
+#testimonials .container {
+  padding-block: var(--section-pd);
+}
+#testimonials .cards {
+  padding-block: var(--section-pd);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+#testimonials .cards > div {
+  position: relative;
+  border-radius: 5px;
+  background-color: #fff;
+  line-height: 1.8;
+  padding: 1rem;
+}
+#testimonials .cards > div img {
+  position: absolute;
+  width:  95px;
+  height: 90px;
+  border-radius: 50%;
+  border: 10px solid #eee;
+  right: 0;
+  bottom: 100%;
+  transform: translateY(50%);
+}
+#testimonials .cards > div hgroup h4 {
+  text-transform: capitalize;
+  font-size: 1.15rem;
+}
+#testimonials .cards > div hgroup p {
+  text-transform: capitalize;
+  color: var(--p-clr);
+}
+#testimonials .cards > div .rating i:not(:last-child) {
+  color: var(--rating-clr);
+}
+#testimonials .cards > div:nth-child(4) .rating i {
+  color: var(--rating-clr);
+}
+#testimonials .cards > div:nth-child(5) .rating i:nth-child(n+4),#testimonials .cards > div:last-child .rating i:nth-child(n+4){ 
+  color: #000;
+}
+#testimonials .cards > div > p {
+  color: var(--p-clr);
+}
+
+/* Team Member Section */
+#team .container {
+  padding-block: var(--section-pd);
+}
+
+#team .cards {
+  padding-block: var(--section-pd);
+  padding-inline: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+}
+#team .cards > div {
+  outline: 1px solid red;
+  position: relative;
+  border-radius: 10px;
+  min-height: 500px;
+  width: 400px;
+}
+
+#team .cards > div img {
+  position: absolute;
+  border-radius: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -40px;
+  width: 360px;
+}
+#team .cards > div .social-media {
+  display: flex;
+  flex-direction: column;
+}
+#team .cards > div .social-media i {
+  color: var(--p-clr);
+}
+
+
 /* ============= Animation ============= */
 
 @keyframes bouncing {
@@ -405,7 +704,7 @@ header .megamenu ul li a:hover {
   100% {
     left: 0;
     height: 100%;
-    width: 50%;
+    width: calc(50% + 1px);
     border-radius: 0;
   }
 }
@@ -418,7 +717,7 @@ header .megamenu ul li a:hover {
   100% {
     right: 0;
     height: 100%;
-    width: 50%;
+    width: calc(50% + 1px);
     border-radius: 0;
   }
 }
@@ -430,5 +729,16 @@ header .megamenu ul li a:hover {
 @keyframes right-and-left {
   to {
     transform: translateX(8px);
+  }
+}
+@keyframes gallery {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
