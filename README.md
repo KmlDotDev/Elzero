@@ -11,7 +11,7 @@ The Status Is Gonna be like this: "Next Up" Or "In Progress" Or "Completed";
 |Gallery|**Completed**| 
 |Features|**Completed**| 
 |Testimonials|**Completed**| 
-|Team|**In Progress**| 
+|Team|**Completed**| 
 |Services|Next Up| 
 |Our-Skills|Next Up| 
 |Work-Steps|Next Up| 

@@ -541,16 +541,14 @@ header .megamenu ul li a:hover {
   position: relative;
   z-index: 1;
 }
-#features .cards > div:hover .btn {
-  color: #fff !important;
-}
+
 #features .cards > div .btn::before {
   content: '';
   position: absolute;
   height: 100%;
   width: 100%;
   top: 0;
-  left: 0;
+  left: -1px;
   z-index: -1;
   transform-origin: left center;
   transform: rotateY(90deg);
@@ -579,6 +577,10 @@ header .megamenu ul li a:hover {
 }
 #features .cards > div:last-of-type .btn::before {
   background-color: var(--clr-3);
+}
+#features .cards > div:hover .btn {
+  color: #fff;
+  overflow: hidden;
 }
 
 /* Testimonials Section */
@@ -633,39 +635,89 @@ header .megamenu ul li a:hover {
 }
 
 /* Team Member Section */
+#team,
 #team .container {
   padding-block: var(--section-pd);
 }
 
 #team .cards {
-  padding-block: var(--section-pd);
-  padding-inline: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 80px;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+   gap: 30px;
 }
-#team .cards > div {
-  outline: 1px solid red;
+#team .cards .card {
   position: relative;
   border-radius: 10px;
-  min-height: 500px;
-  width: 400px;
-}
+  display: grid;
+  grid-template-columns: 1fr 60px;
+  grid-template-rows: 50px auto 80px; 
 
-#team .cards > div img {
-  position: absolute;
-  border-radius: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  left: -40px;
-  width: 360px;
 }
-#team .cards > div .social-media {
+#team .cards .card::before,
+#team .cards .card::after {
+  content: '';
+  position: absolute;
+  top :0;
+  right: 0;
+  height: 100%;
+  width: calc(100% - 60px);
+  border-radius: 10px;
+  transition: .3s;
+}
+#team .cards .card::before {
+  background-color: #eee;
+  z-index: -2;
+}
+#team .cards .card::after {
+  background-color: #ccc;
+  width: 0;
+  z-index: -1;
+}
+#team .cards .card:hover::after {
+  width: calc(100% - 60px);
+}
+#team .cards .card img {
+  border-radius: 10px;
+  grid-area: 2 / 1 / 3 / 2;
+  transition: .3s;
+} 
+#team .cards .card:hover img {
+  filter: grayscale(100);
+}
+#team .cards .card .social-media {
+  grid-area: 2 / 2 / 3 / 3;
   display: flex;
   flex-direction: column;
+  align-self: center;
+  row-gap: 20px;
 }
-#team .cards > div .social-media i {
-  color: var(--p-clr);
+#team .cards .card .social-media i {
+  height: 30px;
+  width: 60px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: color .3s;
+  color: #777;
+}
+#team .cards .card .social-media i:hover {
+  color: var(--main-clr);
+}
+#team .cards .card hgroup {
+  grid-area: 3 / 1 / 4 / 3;
+  padding-left: 80px;
+}
+#team .cards .card hgroup h4 {
+  font-size: 1.3rem;
+  text-transform: capitalize; 
+  color: var(--main-clr);
+  padding-top: 5px;
+}
+#team .cards .card hgroup p {
+  color: #777;
+}
+#team .cards .card:hover hgroup h4 {
+  color: #777;
 }
 
 
