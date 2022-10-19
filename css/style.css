@@ -542,17 +542,18 @@ header .megamenu ul li a:hover {
 }
 
 #features .cards > div .btn::before {
+  display: block;
   content: "";
   position: absolute;
   height: 100%;
   width: 0;
   top: 0;
-  left: -1px;
+  left: 0;
   z-index: -1;
   transition: 0.3s;
 }
 #features .cards > div:hover .btn::before {
-  width: calc(100% + 1px);
+  width: 100%;
 }
 #features .cards > div:first-of-type .btn {
   border-color: var(--clr-1);
