@@ -534,7 +534,6 @@ header .megamenu ul li a:hover {
   border-style: solid;
   border-width: 1px;
   padding: 0.4rem 1rem;
-  border-radius: 4px;
   cursor: pointer;
   width: max-content;
   margin: auto auto 30px;
