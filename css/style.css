@@ -464,7 +464,7 @@ header .megamenu ul li a:hover {
   left: 0;
 }
 #features .cards > div picture::after {
-  content: '';
+  content: "";
   position: absolute;
   border-style: solid;
   border-width: 0 0 300px 800px;
@@ -472,7 +472,7 @@ header .megamenu ul li a:hover {
   border-bottom-color: #fff;
   bottom: 0;
   right: 0;
-  transition: .4s border;
+  transition: 0.4s border;
 }
 #features .cards > div:hover picture::after {
   border-width: 0 800px 180px 0;
@@ -533,7 +533,7 @@ header .megamenu ul li a:hover {
   font-size: 1.4rem;
   font-weight: 700;
   border: 3px solid black;
-  padding: .4rem 1rem;
+  padding: 0.4rem 1rem;
   border-radius: 4px;
   cursor: pointer;
   width: max-content;
@@ -543,19 +543,17 @@ header .megamenu ul li a:hover {
 }
 
 #features .cards > div .btn::before {
-  content: '';
+  content: "";
   position: absolute;
   height: 100%;
-  width: 100%;
+  width: 0;
   top: 0;
-  left: -1px;
+  left: 0;
   z-index: -1;
-  transform-origin: left center;
-  transform: rotateY(90deg);
-  transition: .3s transform ease-out;
+  transition: 0.3s;
 }
 #features .cards > div:hover .btn::before {
-  transform: rotateY(0);
+  width: 100%;
 }
 #features .cards > div:first-of-type .btn {
   border-color: var(--clr-1);
@@ -605,7 +603,7 @@ header .megamenu ul li a:hover {
 }
 #testimonials .cards > div img {
   position: absolute;
-  width:  95px;
+  width: 95px;
   height: 90px;
   border-radius: 50%;
   border: 10px solid #eee;
@@ -627,42 +625,42 @@ header .megamenu ul li a:hover {
 #testimonials .cards > div:nth-child(4) .rating i {
   color: var(--rating-clr);
 }
-#testimonials .cards > div:nth-child(5) .rating i:nth-child(n+4),#testimonials .cards > div:last-child .rating i:nth-child(n+4){ 
+#testimonials .cards > div:nth-child(5) .rating i:nth-child(n + 4),
+#testimonials .cards > div:last-child .rating i:nth-child(n + 4) {
   color: #000;
 }
 #testimonials .cards > div > p {
   color: var(--p-clr);
 }
 
-/* Team Member Section */
+/* * Team Members Section */
 #team,
 #team .container {
   padding-block: var(--section-pd);
 }
 
 #team .cards {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-   gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 30px;
 }
 #team .cards .card {
   position: relative;
   border-radius: 10px;
   display: grid;
   grid-template-columns: 1fr 60px;
-  grid-template-rows: 50px auto 80px; 
-
+  grid-template-rows: 50px auto 80px;
 }
 #team .cards .card::before,
 #team .cards .card::after {
-  content: '';
+  content: "";
   position: absolute;
-  top :0;
+  top: 0;
   right: 0;
   height: 100%;
   width: calc(100% - 60px);
   border-radius: 10px;
-  transition: .3s;
+  transition: 0.3s;
 }
 #team .cards .card::before {
   background-color: #eee;
@@ -679,8 +677,8 @@ header .megamenu ul li a:hover {
 #team .cards .card img {
   border-radius: 10px;
   grid-area: 2 / 1 / 3 / 2;
-  transition: .3s;
-} 
+  transition: 0.3s;
+}
 #team .cards .card:hover img {
   filter: grayscale(100);
 }
@@ -697,7 +695,7 @@ header .megamenu ul li a:hover {
   cursor: pointer;
   display: grid;
   place-items: center;
-  transition: color .3s;
+  transition: color 0.3s;
   color: #777;
 }
 #team .cards .card .social-media i:hover {
@@ -709,7 +707,7 @@ header .megamenu ul li a:hover {
 }
 #team .cards .card hgroup h4 {
   font-size: 1.3rem;
-  text-transform: capitalize; 
+  text-transform: capitalize;
   color: var(--main-clr);
   padding-top: 5px;
 }
@@ -720,8 +718,7 @@ header .megamenu ul li a:hover {
   color: #777;
 }
 
-
-/* ============= Animation ============= */
+/** ============= Animation ============= **/
 
 @keyframes bouncing {
   0%,
