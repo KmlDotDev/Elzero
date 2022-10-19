@@ -547,12 +547,12 @@ header .megamenu ul li a:hover {
   height: 100%;
   width: 0;
   top: 0;
-  left: 0;
+  left: -1px;
   z-index: -1;
   transition: 0.3s;
 }
 #features .cards > div:hover .btn::before {
-  width: 100%;
+  width: calc(100% + 1px);
 }
 #features .cards > div:first-of-type .btn {
   border-color: var(--clr-1);
