@@ -12,12 +12,12 @@ The Status Is Gonna be like this: "Next Up" Or "In Progress" Or "Completed";
 |Features|**Completed**| 
 |Testimonials|**Completed**| 
 |Team|**Completed**| 
-|Services|Next Up| 
-|Our-Skills|Next Up| 
-|Work-Steps|Next Up| 
-|Events|Next Up| 
-|Pricing|Next Up| 
-|Videos|Next Up| 
+|Services|**Completed**| 
+|Our-Skills|**Completed**| 
+|Work-Steps|**Completed**| 
+|Events|**Completed**| 
+|Pricing|**Completed**| 
+|Videos|**In Progress**| 
 |Stats|Next Up| 
 |Discount|Next Up| 
 |Footer|Next Up| 
