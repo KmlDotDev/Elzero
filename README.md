@@ -8,7 +8,7 @@ The Status Is Gonna be like this: "Next Up" Or "In Progress" Or "Completed";
 |Header|**Completed**| 
 |Landing|**Completed**| 
 |Articles|**Completed**| 
-|Gallery|**Completed**| 
+|Gallery|**Completed**|
 |Features|**Completed**| 
 |Testimonials|**Completed**| 
 |Team|**Completed**| 
@@ -17,7 +17,7 @@ The Status Is Gonna be like this: "Next Up" Or "In Progress" Or "Completed";
 |Work-Steps|**Completed**| 
 |Events|**Completed**| 
 |Pricing|**Completed**| 
-|Videos|**In Progress**| 
-|Stats|Next Up| 
-|Discount|Next Up| 
-|Footer|Next Up| 
+|Videos|**Completed**| 
+|Stats|**Completed**| 
+|Discount|**Completed**| 
+|Footer|**Completed**| 
