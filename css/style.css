@@ -548,7 +548,7 @@ picture {
   transition: 0.3s;
 }
 #features .cards > div:hover .btn::before {
-  width: 100%;
+  width: calc(100% + 4px);
 }
 #features .cards > div:first-of-type .btn {
   border-color: var(--clr-1);
