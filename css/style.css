@@ -549,6 +549,7 @@ picture {
 }
 #features .cards > div:hover .btn::before {
   width: calc(100% + 4px);
+  left: 2px;
 }
 #features .cards > div:first-of-type .btn {
   border-color: var(--clr-1);
