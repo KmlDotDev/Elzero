@@ -6,6 +6,12 @@
 // The End Of The Year Date
 // 1000 milliseconds = 1 Second
 
+
+
+
+
+
+
 let countDownDate = new Date("Dec 31, 2022 23:59:59").getTime();
 // console.log(countDownDate);
 
