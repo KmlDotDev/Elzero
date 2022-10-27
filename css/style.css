@@ -536,7 +536,9 @@ picture {
   margin: auto auto 30px;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
+/* ! the before elem doesn't fill all the space for the button */
 #features .cards > div .btn::before {
   content: "";
   position: absolute;
@@ -546,10 +548,6 @@ picture {
   left: 0;
   z-index: -1;
   transition: 0.3s;
-}
-#features .cards > div:hover .btn::before {
-  width: calc(100% + 4px);
-  left: 2px;
 }
 #features .cards > div:first-of-type .btn {
   border-color: var(--clr-1);
@@ -575,7 +573,9 @@ picture {
 #features .cards > div:hover .btn {
   color: #fff;
 }
-
+#features .cards > div:hover .btn::before {
+  width: 100%;
+}
 /* Testimonials Section */
 #testimonials {
   background-color: #eee;
